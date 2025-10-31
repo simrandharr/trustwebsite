@@ -247,3 +247,15 @@ footer a:hover {
   display: none;
 }
 
+.center-box {
+  display: flex;
+  flex-direction: column;   /* image above, text below */
+  align-items: center;      /* centers both horizontally */
+  text-align: center;       /* centers the paragraph text */
+  gap: 15px;
+}
+
+.center-img {
+  width: 600px;             /* adjust size */
+  border-radius: 10px;
+}
