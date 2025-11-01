@@ -211,6 +211,7 @@ footer a:hover {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-top: 20px;
 }
 
 .slides img {
@@ -219,6 +220,7 @@ footer a:hover {
   border-radius: 12px;
   transition: opacity 0.5s ease-in-out;
 }
+
 
 .slides img.active {
   display: block;
@@ -354,4 +356,34 @@ footer a:hover {
   #position {
     position: relative !important;
   }
+}
+
+
+
+/* EVENT TICKER / RUNNING INFO */
+.event-ticker {
+  background: #004aad;
+  color: white;
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px; 
+}
+
+.event-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: tickerMove 15s linear infinite;
+}
+
+.event-track span {
+  margin-right: 40px; /* space between messages */
+}
+
+@keyframes tickerMove {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
