@@ -359,71 +359,30 @@ footer a:hover {
 }
 
 
-/* ===== Mobile-friendly Event Ticker ===== */
+/* EVENT TICKER / RUNNING INFO */
 .event-ticker {
   background: #004aad;
-  color: #fff;
-  width: 100%;
+  color: white;
+  padding: 10px 0;
   overflow: hidden;
-  font-weight: 600;
-  --pad-vertical: 10px;
-  padding: var(--pad-vertical) 12px;
-  box-sizing: border-box;
-}
-
-/* track holds inline items */
-.event-track {
-  display: inline-flex;
-  gap: 40px;
-  white-space: nowrap;
-  will-change: transform;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  font-weight: bold;
   font-size: 16px;
-  /* desktop animation (enabled below via .animate) */
 }
 
-/* basic item style */
-.event-track span {
+.event-track {
   display: inline-block;
-  padding-right: 6px;
+  white-space: nowrap;
+  animation: tickerMove 15s linear infinite;
 }
 
-/* ===== Desktop: animated loop ===== */
-@media (min-width: 769px) {
-  .event-track.animate {
-    animation: tickerMove 16s linear infinite;
-  }
-  @keyframes tickerMove {
-    0%   { transform: translateX(0%); }
-    100% { transform: translateX(-50%); } /* we duplicate items to make -50% loop */
-  }
+.event-track span {
+  margin-right: 40px; /* space between messages */
 }
 
-/* ===== Mobile: allow swipe/scroll and stop animation ===== */
-@media (max-width: 768px) {
-  .event-ticker {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
-
-  /* make the track horizontally scrollable by user */
-  .event-track {
-    display: inline-flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: 24px;
-    padding-bottom: 6px;
-  }
-
-  /* hide scrollbar visually but keep functionality (works in most browsers) */
-  .event-track::-webkit-scrollbar { height: 8px; }
-  .event-track { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.15) transparent; }
+@keyframes tickerMove {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
 }
-
-/* Extra safety: if items are too long, allow wrapping as fallback */
-@media (max-width: 420px) {
-  .event-track { white-space: normal; gap: 12px; }
-  .event-track span { display: inline-block; margin-right: 8px; }
-}
-
 
