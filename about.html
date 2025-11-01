@@ -10,21 +10,27 @@
 </head>
 
 <body>
-  <header>
+    <header>
     <div class="logo">
       <img src="images/logo1.jpg" alt="Trust Logo" height="100" width="100">
       <h1>Laugakshi Samrasta Charitable Trust</h1>
       <img src="images/logo2a.jpg" alt="Trust Logo" height="100" width="100">
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="activities.html">Activities</a>
-      <a href="future.html">Future Plans</a>
-      <a href="donors.html">Donors</a>
-      <a href="donate.html">Donate</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+
+
+     <nav class="nav-bar">
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="activities.html">Activities</a>
+        <a href="future.html">Future Plans</a>
+        <a href="donors.html">Donors</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
   </header>
   <main>
     <section class="hero">
@@ -104,9 +110,13 @@
   <footer>
     &copy; 2025 Laugakshi Samrasta Charitable Trust | Serve Humanity, Serve the Divine Within
     <br>
-    Designed by Simran Dhar (MCA, Jammu University)
+    Designed by Simran Dhar (MCA(2024-2026), University of Jammu)
   </footer>
-
+ <script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 </body>
 
 </html>
