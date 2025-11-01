@@ -259,3 +259,86 @@ footer a:hover {
   width: 600px;             /* adjust size */
   border-radius: 10px;
 }
+
+
+
+
+
+/* NAVIGATION BAR */
+.nav-bar {
+  background: #004aad;
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: white;
+}
+
+/* HAMBURGER */
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  font-weight: bold;
+  display: none; /* visible only on mobile */
+}
+
+/* NAV LINKS */
+.nav-links {
+  flex:2;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 12px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: #022c77;
+  border-radius: 5px;
+}
+
+/* SEARCH BAR */
+.search-box input {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+/* ✅ RESPONSIVE (Mobile View) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .search-box {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #004aad;
+    position: absolute;
+    top: 150px; /* adjust if needed based on header height */
+    width: 100%;
+    left: 0;
+    padding: 15px;
+    border-top: 2px solid white;
+  }
+
+  .nav-links a {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
