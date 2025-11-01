@@ -359,83 +359,71 @@ footer a:hover {
 }
 
 
-
-/* EVENT TICKER / RUNNING INFO */
+/* ===== Mobile-friendly Event Ticker ===== */
 .event-ticker {
   background: #004aad;
-  color: white;
-  padding: 10px 0;
-  overflow: hidden;
-  position: relative;
+  color: #fff;
   width: 100%;
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 20px; 
-}
-
-.event-track {
-  display: inline-block;
-  white-space: nowrap;
-  animation: tickerMove 15s linear infinite;
-}
-
-.event-track span {
-  margin-right: 40px; /* space between messages */
-}
-
-@keyframes tickerMove {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-
-/* ✅ EVENT TICKER (Desktop + Mobile Friendly) */
-.event-ticker {
-  background: #004aad;
-  color: white;
-  padding: 10px 0;
   overflow: hidden;
-  width: 100%;
-  font-weight: bold;
-  font-size: 16px;
-  position: relative;
-  white-space: nowrap;
+  font-weight: 600;
+  --pad-vertical: 10px;
+  padding: var(--pad-vertical) 12px;
+  box-sizing: border-box;
 }
 
+/* track holds inline items */
 .event-track {
-  display: inline-block;
-  animation: tickerMove 18s linear infinite;
+  display: inline-flex;
+  gap: 40px;
+  white-space: nowrap;
+  will-change: transform;
+  align-items: center;
+  font-size: 16px;
+  /* desktop animation (enabled below via .animate) */
 }
 
+/* basic item style */
 .event-track span {
-  margin-right: 40px;
+  display: inline-block;
+  padding-right: 6px;
 }
 
-/* ✅ Mobile Fix */
+/* ===== Desktop: animated loop ===== */
+@media (min-width: 769px) {
+  .event-track.animate {
+    animation: tickerMove 16s linear infinite;
+  }
+  @keyframes tickerMove {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-50%); } /* we duplicate items to make -50% loop */
+  }
+}
+
+/* ===== Mobile: allow swipe/scroll and stop animation ===== */
 @media (max-width: 768px) {
   .event-ticker {
-    font-size: 14px;           /* smaller text */
-    padding: 8px 0;           
+    padding: 8px 10px;
+    font-size: 14px;
   }
 
+  /* make the track horizontally scrollable by user */
   .event-track {
-    animation: tickerMoveMobile 25s linear infinite; /* slower */
+    display: inline-flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 24px;
+    padding-bottom: 6px;
   }
 
-  .event-track span {
-    margin-right: 25px;        /* less spacing */
-  }
+  /* hide scrollbar visually but keep functionality (works in most browsers) */
+  .event-track::-webkit-scrollbar { height: 8px; }
+  .event-track { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.15) transparent; }
 }
 
-/* Desktop Animation */
-@keyframes tickerMove {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+/* Extra safety: if items are too long, allow wrapping as fallback */
+@media (max-width: 420px) {
+  .event-track { white-space: normal; gap: 12px; }
+  .event-track span { display: inline-block; margin-right: 8px; }
 }
 
-/* Mobile Animation (smoother + slower) */
-@keyframes tickerMoveMobile {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-120%); }
-}
 
