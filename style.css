@@ -348,13 +348,3 @@ footer a:hover {
     position: relative !important;
   }
 }
-
-/* FIX IMAGES OVERFLOWING ON MOBILE */
-img {
-  display: block;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  box-sizing: border-box;
-}
