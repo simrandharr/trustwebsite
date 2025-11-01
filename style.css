@@ -41,8 +41,15 @@ header {
 }
 
 header img {
-  height: 80px;
+  height: auto;
+  max-height: 80px;     /* keeps size controlled but NOT cropped */
+  width: auto;
+  object-fit: contain;  /* stops cutting logo */
 }
+
+/* header img {
+  height: 80px;
+} */
 
 /* Navigation */
 nav {
