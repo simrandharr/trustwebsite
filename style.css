@@ -387,3 +387,55 @@ footer a:hover {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+
+
+/* ✅ EVENT TICKER (Desktop + Mobile Friendly) */
+.event-ticker {
+  background: #004aad;
+  color: white;
+  padding: 10px 0;
+  overflow: hidden;
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.event-track {
+  display: inline-block;
+  animation: tickerMove 18s linear infinite;
+}
+
+.event-track span {
+  margin-right: 40px;
+}
+
+/* ✅ Mobile Fix */
+@media (max-width: 768px) {
+  .event-ticker {
+    font-size: 14px;           /* smaller text */
+    padding: 8px 0;           
+  }
+
+  .event-track {
+    animation: tickerMoveMobile 25s linear infinite; /* slower */
+  }
+
+  .event-track span {
+    margin-right: 25px;        /* less spacing */
+  }
+}
+
+/* Desktop Animation */
+@keyframes tickerMove {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Mobile Animation (smoother + slower) */
+@keyframes tickerMoveMobile {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-120%); }
+}
+
