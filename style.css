@@ -342,3 +342,8 @@ footer a:hover {
     display: flex;
   }
 }
+@media (max-width: 768px) {
+  #position {
+    position: relative !important;
+  }
+}
