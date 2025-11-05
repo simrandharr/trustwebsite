@@ -429,3 +429,177 @@ footer a:hover {
     font-size: 1.4rem; /* ✅ thoda bada, neat dikhe */
   }
 }
+
+/* ✅ NAVIGATION BAR (DESKTOP) */
+.nav-bar {
+  background: #004aad;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.hamburger {
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: #022c77;
+  border-radius: 6px;
+}
+
+/* ✅ MOBILE DROPDOWN MENU */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;        /* comes just under navbar */
+    left: 0;
+    width: 100%;
+    background: #004aad;
+    padding: 15px;
+    border-top: 2px solid white;
+    z-index: 999;
+  }
+
+  .nav-links a {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* ✅ Close button inside dropdown */
+  .close-btn {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+
+/* ✅ NAVIGATION BAR (DESKTOP) */
+.nav-bar {
+  background: #004aad;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.hamburger {
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: #022c77;
+  border-radius: 6px;
+}
+
+/* ✅ CLOSE BUTTON — hidden on desktop */
+.close-btn {
+  display: none;
+}
+
+/* ✅ MOBILE MENU */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;           /* exactly below navbar */
+    left: 0;
+    width: 100%;
+    background: #004aad;
+    padding: 15px 20px;
+    border-top: 2px solid white;
+    z-index: 9999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* ✅ Show close button on mobile */
+  .close-btn {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: flex-end; /* push hamburger to the right */
+    align-items: center;
+}
+
+.hamburger {
+    margin-left: auto; /* extra push to the right */
+    cursor: pointer;
+}
