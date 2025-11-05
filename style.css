@@ -1,4 +1,4 @@
-/* Reset and base styles */
+Reset and base styles
 * {
   margin: 0;
   padding: 0;
@@ -588,18 +588,46 @@ footer a:hover {
     font-weight: bold;
     color: white;
     cursor: pointer;
-    text-align: right;
+    text-align: left;
     margin-bottom: 10px;
   }
 }
 
 .nav-bar {
     display: flex;
-    justify-content: flex-end; /* push hamburger to the right */
+    justify-content: flex-start; 
     align-items: center;
 }
 
 .hamburger {
     margin-left: auto; /* extra push to the right */
     cursor: pointer;
+} 
+
+header {
+    padding: 10px 20px;   /* reduce from 50px to avoid overflow */
+}
+
+.nav-bar {
+    width: 100%;
+    box-sizing: border-box; /* ensures padding does NOT break layout */
+    position: relative;     /* absolute mobile menu stays INSIDE */
+}
+@media (max-width: 768px) {
+    .nav-links {
+        top: 50px; /* not 60 or 80 */
+    }
+}
+
+header {
+  padding: 10px 0;      /* Remove left-right padding */
+}
+
+.nav-bar {
+  width: 100%;
+}
+
+.nav-links {
+  left: 0;
+  width: 100%;
 }
