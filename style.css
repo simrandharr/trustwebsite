@@ -1,5 +1,4 @@
-Reset and base styles
-* {
+Reset and base styles * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -42,10 +41,13 @@ header {
 
 header img {
   height: auto;
-  max-height: 80px;     /* keeps size controlled but NOT cropped */
+  max-height: 80px;
+  /* keeps size controlled but NOT cropped */
   width: auto;
-  object-fit: contain;  /* stops cutting logo */
+  object-fit: contain;
+  /* stops cutting logo */
 }
+
 /* header img {
   height: 80px;
 } */
@@ -188,7 +190,9 @@ footer a:hover {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  header, section {
+
+  header,
+  section {
     padding: 40px 20px;
     position: relative;
   }
@@ -202,6 +206,7 @@ footer a:hover {
     font-size: 2rem;
   }
 }
+
 /* Slider Styles */
 .slider {
   position: relative;
@@ -209,7 +214,7 @@ footer a:hover {
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
 
@@ -229,7 +234,7 @@ footer a:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
   font-size: 2rem;
@@ -241,7 +246,7 @@ footer a:hover {
 }
 
 .slider button:hover {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .slider .prev {
@@ -258,14 +263,18 @@ footer a:hover {
 
 .center-box {
   display: flex;
-  flex-direction: column;   /* image above, text below */
-  align-items: center;      /* centers both horizontally */
-  text-align: center;       /* centers the paragraph text */
+  flex-direction: column;
+  /* image above, text below */
+  align-items: center;
+  /* centers both horizontally */
+  text-align: center;
+  /* centers the paragraph text */
   gap: 15px;
 }
 
 .center-img {
-  width: 600px;             /* adjust size */
+  width: 600px;
+  /* adjust size */
   border-radius: 10px;
 }
 
@@ -277,7 +286,7 @@ footer a:hover {
 .nav-bar {
   background: #004aad;
   display: flex;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 10px 20px;
   color: white;
@@ -288,12 +297,13 @@ footer a:hover {
   font-size: 28px;
   cursor: pointer;
   font-weight: bold;
-  display: none; /* visible only on mobile */
+  display: none;
+  /* visible only on mobile */
 }
 
 /* NAV LINKS */
 .nav-links {
-  flex:2;
+  flex: 2;
   display: flex;
   justify-content: center;
   gap: 25px;
@@ -335,7 +345,8 @@ footer a:hover {
     flex-direction: column;
     background: #004aad;
     position: absolute;
-    top: 150px; /* adjust if needed based on header height */
+    top: 150px;
+    /* adjust if needed based on header height */
     width: 100%;
     left: 0;
     padding: 15px;
@@ -344,13 +355,14 @@ footer a:hover {
 
   .nav-links a {
     padding: 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .nav-links.active {
     display: flex;
   }
 }
+
 @media (max-width: 768px) {
   #position {
     position: relative !important;
@@ -377,22 +389,30 @@ footer a:hover {
 }
 
 .event-track span {
-  margin-right: 40px; /* space between messages */
+  margin-right: 40px;
+  /* space between messages */
 }
 
 @keyframes tickerMove {
-  0% { transform: translateX(100vw); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @media (max-width: 600px) {
   .logo h1 {
-    font-size: 1rem;   /* apne hisaab se aur chhota/ bada karlo */
+    font-size: 1rem;
+    /* apne hisaab se aur chhota/ bada karlo */
   }
 }
 
 .logo h1 {
-  white-space: nowrap;   /* text ko break hone se rokega */
+  white-space: nowrap;
+  /* text ko break hone se rokega */
 }
 
 @media (max-width: 600px) {
@@ -404,29 +424,36 @@ footer a:hover {
 
 /* ✅ Make logo + text fit on small screens */
 .logo {
-  flex-wrap: nowrap;        /* keep in one line */
-  gap: 10px;                /* reduce space */
+  flex-wrap: nowrap;
+  /* keep in one line */
+  gap: 10px;
+  /* reduce space */
 }
 
 /* ✅ Reduce logo image size on phones */
 @media (max-width: 600px) {
   .logo img {
-    max-height: 40px;       /* smaller logo image */
+    max-height: 40px;
+    /* smaller logo image */
   }
 
   .logo h1 {
-    font-size: 1.2rem;      /* adjust to fit better */
-    white-space: nowrap;    /* prevent breaking */
+    font-size: 1.2rem;
+    /* adjust to fit better */
+    white-space: nowrap;
+    /* prevent breaking */
   }
 }
 
 @media (max-width: 600px) {
   .logo img {
-    display: none;     /* ✅ mobile par logo hide */
+    display: none;
+    /* ✅ mobile par logo hide */
   }
 
   .logo h1 {
-    font-size: 1.4rem; /* ✅ thoda bada, neat dikhe */
+    font-size: 1.4rem;
+    /* ✅ thoda bada, neat dikhe */
   }
 }
 
@@ -477,7 +504,8 @@ footer a:hover {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;        /* comes just under navbar */
+    top: 60px;
+    /* comes just under navbar */
     left: 0;
     width: 100%;
     background: #004aad;
@@ -563,7 +591,8 @@ footer a:hover {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%;           /* exactly below navbar */
+    top: 100%;
+    /* exactly below navbar */
     left: 0;
     width: 100%;
     background: #004aad;
@@ -578,7 +607,7 @@ footer a:hover {
 
   .nav-links a {
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   /* ✅ Show close button on mobile */
@@ -594,33 +623,57 @@ footer a:hover {
 }
 
 .nav-bar {
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .hamburger {
-    margin-left: auto; /* extra push to the right */
-    cursor: pointer;
-} 
+  margin-left: auto;
+  /* extra push to the right */
+  cursor: pointer;
+}
 
 header {
-    padding: 10px 20px;   /* reduce from 50px to avoid overflow */
+  padding: 10px 20px;
+  /* reduce from 50px to avoid overflow */
 }
 
 .nav-bar {
-    width: 100%;
-    box-sizing: border-box; /* ensures padding does NOT break layout */
-    position: relative;     /* absolute mobile menu stays INSIDE */
+  width: 100%;
+  box-sizing: border-box;
+  /* ensures padding does NOT break layout */
+  position: relative;
+  /* absolute mobile menu stays INSIDE */
 }
+
 @media (max-width: 768px) {
-    .nav-links {
-        top: 50px; /* not 60 or 80 */
-    }
+  .nav-links {
+    top: 50px;
+    /* not 60 or 80 */
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    /* just below navbar */
+    left: 0;
+    /* start from left edge of navbar */
+    width: 100%;
+    /* take full width of navbar */
+    max-width: 100%;
+    /* prevent overflow */
+    background: #004aad;
+    padding: 10px 0;
+    z-index: 9999;
+    box-sizing: border-box;
+    /* important for width calculations */
+    overflow: hidden;
+  }
 }
 
 header {
-  padding: 10px 0;      /* Remove left-right padding */
+  padding: 10px 0;
+  /* Remove left-right padding */
 }
 
 .nav-bar {
@@ -630,4 +683,5 @@ header {
 .nav-links {
   left: 0;
   width: 100%;
+  max-width: 100%
 }
