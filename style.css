@@ -46,7 +46,6 @@ header img {
   width: auto;
   object-fit: contain;  /* stops cutting logo */
 }
-
 /* header img {
   height: 80px;
 } */
@@ -386,3 +385,19 @@ footer a:hover {
   100% { transform: translateX(-100%); }
 }
 
+@media (max-width: 600px) {
+  .logo h1 {
+    font-size: 1rem;   /* apne hisaab se aur chhota/ bada karlo */
+  }
+}
+
+.logo h1 {
+  white-space: nowrap;   /* text ko break hone se rokega */
+}
+
+@media (max-width: 600px) {
+  .logo h1 {
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
+}
