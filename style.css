@@ -401,3 +401,31 @@ footer a:hover {
     white-space: nowrap;
   }
 }
+
+/* ✅ Make logo + text fit on small screens */
+.logo {
+  flex-wrap: nowrap;        /* keep in one line */
+  gap: 10px;                /* reduce space */
+}
+
+/* ✅ Reduce logo image size on phones */
+@media (max-width: 600px) {
+  .logo img {
+    max-height: 40px;       /* smaller logo image */
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;      /* adjust to fit better */
+    white-space: nowrap;    /* prevent breaking */
+  }
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    display: none;     /* ✅ mobile par logo hide */
+  }
+
+  .logo h1 {
+    font-size: 1.4rem; /* ✅ thoda bada, neat dikhe */
+  }
+}
