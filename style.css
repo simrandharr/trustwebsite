@@ -265,9 +265,9 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   /* image above, text below */
-  align-items: center;
+  align-items: justify;
   /* centers both horizontally */
-  text-align: center;
+  text-align: justify;
   /* centers the paragraph text */
   gap: 15px;
 }
@@ -385,11 +385,11 @@ footer a:hover {
 .event-track {
   display: inline-block;
   white-space: nowrap;
-  animation: tickerMove 15s linear infinite;
+  animation: tickerMove 20s linear infinite;
 }
 
 .event-track span {
-  margin-right: 40px;
+  margin-right: 80px;
   /* space between messages */
 }
 
@@ -684,4 +684,39 @@ header {
   left: 0;
   width: 100%;
   max-width: 100%
+}
+/* Desktop: keep name in one line */
+.logo h1 {
+  white-space: nowrap;
+}
+
+/* Mobile: allow name to break into two lines */
+@media (max-width: 600px) {
+  .logo h1 {
+    white-space: normal !important;
+    font-size: 1.2rem;   /* adjust as you like */
+    text-align: center;
+  }
+}
+/* Desktop: no break */
+.logo h1 br {
+  display: none;
+}
+
+/* Mobile: break into two lines */
+@media (max-width: 600px) {
+  .logo h1 br {
+    display: inline;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    display: block;     /* show logo on mobile */
+    max-height: 40px;   /* adjust size */
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+  }
 }
