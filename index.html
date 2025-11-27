@@ -172,20 +172,19 @@
 window.addEventListener("DOMContentLoaded", function () {
   const splash = document.getElementById("splash");
 
-  // Check if splash was already shown
-  const hasSeenSplash = sessionStorage.getItem("seenSplash");
+  // Check if splash has been shown this session
+  if (!sessionStorage.getItem("splashShown")) {
+    sessionStorage.setItem("splashShown", "true");
 
-  if (!hasSeenSplash) {
-    // First time loading this session
-    sessionStorage.setItem("seenSplash", "yes"); // mark as shown
-
+    // Show splash for 2 seconds
     setTimeout(() => {
       splash.classList.add("fade-out");
       document.body.classList.remove("loading");
     }, 2000);
+
   } else {
-    // Already seen — hide immediately
-    if (splash) splash.style.display = "none";
+    // Splash already shown: hide it immediately
+    splash.style.display = "none";
     document.body.classList.remove("loading");
   }
 });
