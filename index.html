@@ -168,41 +168,29 @@
     <br>
     Designed by Simran Dhar | sdharr08@gmail.com
   </footer>
-  <script>
+<script>
 window.addEventListener("DOMContentLoaded", function () {
   const splash = document.getElementById("splash");
 
-  // Check if splash already shown in this session
+  // Check if splash was already shown
   const hasSeenSplash = sessionStorage.getItem("seenSplash");
 
   if (!hasSeenSplash) {
-    // First visit in this browser session
-    sessionStorage.setItem("seenSplash", "yes");
+    // First time loading this session
+    sessionStorage.setItem("seenSplash", "yes"); // mark as shown
 
     setTimeout(() => {
       splash.classList.add("fade-out");
       document.body.classList.remove("loading");
     }, 2000);
-
   } else {
-    // User has already seen splash — hide it instantly
-    splash.style.display = "none";
+    // Already seen — hide immediately
+    if (splash) splash.style.display = "none";
     document.body.classList.remove("loading");
   }
 });
 </script>
 
-<!-- <script>
-window.addEventListener("DOMContentLoaded", function () {
-  const splash = document.getElementById("splash");
-  if (splash) {
-    setTimeout(() => {
-      splash.classList.add("fade-out");
-      document.body.classList.remove("loading");
-    }, 2000);
-  }
-});
-</script> -->
 
   <script>
     function toggleMenu() {
