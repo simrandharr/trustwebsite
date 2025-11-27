@@ -168,7 +168,31 @@
     <br>
     Designed by Simran Dhar | sdharr08@gmail.com
   </footer>
-<script>
+  <script>
+window.addEventListener("DOMContentLoaded", function () {
+  const splash = document.getElementById("splash");
+
+  // Check if splash already shown in this session
+  const hasSeenSplash = sessionStorage.getItem("seenSplash");
+
+  if (!hasSeenSplash) {
+    // First visit in this browser session
+    sessionStorage.setItem("seenSplash", "yes");
+
+    setTimeout(() => {
+      splash.classList.add("fade-out");
+      document.body.classList.remove("loading");
+    }, 2000);
+
+  } else {
+    // User has already seen splash — hide it instantly
+    splash.style.display = "none";
+    document.body.classList.remove("loading");
+  }
+});
+</script>
+
+<!-- <script>
 window.addEventListener("DOMContentLoaded", function () {
   const splash = document.getElementById("splash");
   if (splash) {
@@ -178,7 +202,7 @@ window.addEventListener("DOMContentLoaded", function () {
     }, 2000);
   }
 });
-</script>
+</script> -->
 
   <script>
     function toggleMenu() {
