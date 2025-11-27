@@ -10,7 +10,12 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+
+  <body class="loading">
+
+  <!-- Splash Screen -->
+  <div id="splash"></div>
+
   <header>
     <div class="logo" id="position">
       <img src="images/logo1.jpg" alt="Trust Logo" height="100" width="100">
@@ -163,6 +168,18 @@
     <br>
     Designed by Simran Dhar | sdharr08@gmail.com
   </footer>
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+  const splash = document.getElementById("splash");
+  if (splash) {
+    setTimeout(() => {
+      splash.classList.add("fade-out");
+      document.body.classList.remove("loading");
+    }, 2000);
+  }
+});
+</script>
+
   <script>
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("active");

@@ -727,3 +727,25 @@ header {
   text-decoration: none;
   transition: 0.3s ease;
 }
+
+/* -------------------- SPLASH SCREEN -------------------- */
+#splash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000 url("images/mata.jpg") center/contain no-repeat;
+  /* CHANGE the image above to the photo you want */
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 1s ease;  /* fade out */
+}
+
+/* fade-out class added by JS */
+#splash.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.loading {
+  overflow: hidden; /* prevent scroll while splash is visible */
+}
