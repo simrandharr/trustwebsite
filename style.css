@@ -728,16 +728,28 @@ header {
   transition: 0.3s ease;
 }
 
-/* -------------------- SPLASH SCREEN -------------------- */
+
+
 #splash {
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%; 
+  height: 100%;
   background: #000 url("images/mata.jpg") center/contain no-repeat;
-  /* CHANGE the image above to the photo you want */
   z-index: 99999;
   opacity: 1;
   transition: opacity 1s ease;  /* fade out */
+  overflow: hidden;
+}
+
+/* 🔥 Blurry fallback layer (visible while image is loading) */
+#splash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;            /* fallback color */
+  filter: blur(20px);          /* adjust blur strength */
+  z-index: -1;                 /* behind the splash image */
 }
 
 /* fade-out class added by JS */
@@ -749,3 +761,29 @@ header {
 body.loading {
   overflow: hidden; /* prevent scroll while splash is visible */
 }
+
+
+
+
+
+/* -------------------- SPLASH SCREEN -------------------- */
+/* #splash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000 url("images/mata.jpg") center/contain no-repeat;
+
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 1s ease; 
+}
+
+
+#splash.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.loading {
+  overflow: hidden;
+} */
