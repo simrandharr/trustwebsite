@@ -729,10 +729,30 @@ header {
 }
 
 
+#splash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000 url("images/mata.jpg") center/contain no-repeat;
 
+  z-index: 99999;
+  opacity: 1;
+  transition: opacity 1s ease; 
+}
+
+
+#splash.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.loading {
+  overflow: hidden;
+}
 
 
 /* -------------------- SPLASH SCREEN -------------------- */
+@media (max-width: 600px) {
 #splash {
   position: fixed;
   top: 0; left: 0;
@@ -752,4 +772,5 @@ header {
 
 body.loading {
   overflow: hidden;
+}
 }
